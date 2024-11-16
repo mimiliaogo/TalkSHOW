@@ -234,13 +234,14 @@ class RenderTool():
             writer.write(final_img)
         writer.release()
 
-        cmd = ('ffmpeg' + ' -i {0} -i {1} -vcodec h264 -ac 2 -channel_layout stereo -pix_fmt yuv420p {2}'.format(
-            tmp_audio_file.name, tmp_video_file.name, video_fname)).split()
-        # cmd = ('ffmpeg' + '-i {0} -vcodec h264 -ac 2 -channel_layout stereo -pix_fmt yuv420p {1}'.format(
-        #     tmp_video_file.name, video_fname)).split()
-        call(cmd)
-        os.remove(tmp_audio_file.name)
-        os.remove(tmp_video_file.name)
+        # TODO[mimi]: remove ffmpeg due to system errors
+        # cmd = ('ffmpeg' + ' -i {0} -i {1} -vcodec h264 -ac 2 -channel_layout stereo -pix_fmt yuv420p {2}'.format(
+        #     tmp_audio_file.name, tmp_video_file.name, video_fname)).split()
+        # # cmd = ('ffmpeg' + '-i {0} -vcodec h264 -ac 2 -channel_layout stereo -pix_fmt yuv420p {1}'.format(
+        # #     tmp_video_file.name, video_fname)).split()
+        # call(cmd)
+        # os.remove(tmp_audio_file.name)
+        # os.remove(tmp_video_file.name)
 
     def _render_continuity(self, cur_wav_file, pred, frame, run_in_parallel=False):
         print("Render {} {} sequence.".format(cur_wav_file.split(symbol)[-2],cur_wav_file.split(symbol)[-1]))

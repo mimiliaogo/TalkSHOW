@@ -5,3 +5,7 @@ test_3d_mfcc.pkl
 visualise/video
 .idea
 .git
+__pycache__/
+*.pyc
+robustness/
+*.zip

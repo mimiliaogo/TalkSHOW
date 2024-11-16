@@ -253,7 +253,7 @@ class TrainWrapper(TrainWrapperBaseClass):
         if id is None:
             id = torch.tensor([0]).to(self.device)
         else:
-            id = id.repeat(B)
+            id = id.repeat(B).to(self.device)
 
         with torch.no_grad():
             aud_feat = aud_feat.permute(0, 2, 1)
